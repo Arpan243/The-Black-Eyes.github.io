@@ -10,6 +10,8 @@
 </head>
 
 <body>
+    <div id="progressbar"></div>
+    <div class="scroll"></div>
     <!-- <img class="squid"  src="Flyingsquid.png" alt=""> -->
     <div class="back">
         <div class="all">
@@ -44,7 +46,7 @@
                     Hire Me
                 </button>
 
-                <img src="arrow.png" alt="" class="arrow">
+                <img id="arrow" src="arrow.png" alt="" >
             </div>
         </div>
     </div>
@@ -122,7 +124,22 @@
             Designed & Executed By Shuvam Patra & Arpan Karjee
         </footer>
     </div>
-
+<script type="text/javascript">
+    let progress = document.getElementById('progressbar');
+    let totalHeight= document.body.scrollHeight - window.innerHeight;
+    window.onscroll = function(){
+        let progressHeight = (window.pageYOffset/totalHeight) * 100;
+        progress.style.height = progressHeight + "%";
+    }
+    let arrow =document.getElementById('arrow');
+    arrow.onclick= function(){
+        // console.log(window.pageYOffset)
+        scrollHeight=603;
+    }
+    // function topFunction(){
+    //     document.documentElement.scrollTop=763;
+    // }
+</script>
 
 </body>
 
